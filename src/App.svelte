@@ -104,11 +104,13 @@
 	}
 
 </script>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark  nav-pills">
-	<div class="container-md">
-		<a class="navbar-brand" href="#">Logo</a>
+<nav id="defaultNav" name="defaultNav" class="navbar navbar-expand-lg navbar-dark bg-dark  nav-pills">
+	<div class="container-fluid text-start">
+		<a class="navbar-brand" href="#">
+			<img src="/images/logo.png" alt="Store Logo"/>
+		</a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<ul class="navbar-nav me-auto mb-2">
 				<li class="nav-item">
 					<a class="nav-link" href="#" on:click={buttonHandler}>Snacks</a>
 				</li>
@@ -139,7 +141,7 @@
 
 			{#each mySnacks as theSnack, i}
 				{#if i % cols === 0}
-					<div class="row row-cols-3 mt-3">
+					<div class="row row-cols-5 mt-3">
 						{#each Array(cols) as _,j}
 							<div class="col">
 								{#if mySnacks[i/cols*cols + j]}
@@ -199,4 +201,9 @@
 		
 	}
 
+	#defaultNav {
+		-webkit-box-shadow: 0px 5px 17px 0px rgba(89,84,89,1);
+		-moz-box-shadow: 0px 5px 17px 0px rgba(89,84,89,1);
+		box-shadow: 0px 5px 17px 0px rgba(89,84,89,1);
+	}
 </style>
